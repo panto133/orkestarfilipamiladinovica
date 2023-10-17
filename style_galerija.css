@@ -1,0 +1,89 @@
+.hero-image {
+    background-image: url("img/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: calc(3vw + 2.5vh);
+}
+
+h1 {
+    margin: calc(2vw + 2vh); 
+    margin-top:0;
+    padding-top: calc(4vw + 4vh);
+    text-align: center;
+    color: white;
+    font-size: calc(2vw + 2vh);
+}
+
+h2 {
+    margin: calc(2vw + 1vh);
+    text-align: center;
+    color: white;
+    font-size: calc(2vw + 1vh);
+}
+
+video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: calc(15vw + 15vh);
+}
+
+.video-container {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc(1vw + 1vh);
+}
+
+.important-video-container {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc(1vw + 1vh);
+    padding:.5vw;
+    height: calc(25vw + 25vh);
+}
+
+.important-video {
+    object-fit: cover;
+    height: 100%;
+}
+
+.header-holder {
+    display: flex;
+    justify-content: center;
+}
+
+.fas {
+    color: white;
+    font-size: calc(2vw + 2vh);
+}
+
+.fa-images::before {
+    position: relative;
+    top: calc(50% - 1vw);
+}
+.fa-film::before {
+    position: relative;
+    top: calc(50% - 1vw);
+}
+
+.carousel-image {
+    width: 100%;
+}
+
+.carousel-container {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc(1vw + 1vh);
+}
+@media only screen and (max-width: 568px) {
+    .carousel-indicators {
+        visibility: hidden;
+    }
+}

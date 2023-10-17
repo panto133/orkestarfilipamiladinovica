@@ -1,0 +1,183 @@
+.description, .card-description {
+    padding-left: calc(1.5vw + 1.5vh);
+    padding-right: calc(1.5vw + 1.5vh);
+    padding-top: calc(.5vw + .5vh);
+    color:white;
+    text-align: justify;
+    font-size:calc(1vw + 1vh);
+}
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+  }
+  
+  @property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+  }
+  
+  @property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+  }
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgb(216, 178, 72);
+	--c2: rgba(216, 178, 72,0.1);
+}
+.band-description {
+    font-size: calc(1vw + .5vh);
+    display: table-cell;
+    vertical-align: middle;
+    padding-top:0;
+}
+.table-cheat {
+    display:table;
+}
+.hero-image {
+    background-image: url("img/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: calc(3vw + 2.5vh);
+}
+
+h1 {
+    margin: calc(2vw + 2vh); 
+    margin-top:0;
+    padding-top: calc(4vw + 4vh);
+    text-align: center;
+    color: white;
+    font-size: calc(2vw + 2vh);
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    margin-top: calc(1vw + 1vh);
+    font-size: calc(1vw + 1vh);
+    font-weight: 700;
+    color:rgb(63, 63, 63);
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    font-size: calc(1vw + .75vh);
+    font-style: italic;
+    color:rgb(63, 63, 63);
+}
+
+.image-holder {
+    position: relative;
+    top: calc(50% - 7.5vw - 7.5vh);
+}
+
+.description-style1 {
+    padding: calc(.5vw + .5vh);
+
+    background-color: rgb(216, 178, 72);
+}
+
+.description-style2 {
+    padding: calc(.5vw + .5vh);
+}
+
+.description-image, .image-highlight {
+    border-radius: 50%;
+    width: calc(6vw + 6vh);
+    aspect-ratio: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:calc(1vw + .5vh);
+}
+.image-highlight {
+    border-radius: 0;
+    margin-top:0;
+    width: calc(10vw + 10vh);
+}
+.card, .card-highlight {
+    display:block;
+    width:100%;
+    height: 100%;
+    padding-left:calc(1vw + 1vh);
+    padding-right:calc(1vw + 1vh);
+    padding-top:calc(1vw + 1vh);
+}
+.card:hover {
+    box-shadow: none;
+    transform: none;
+    transition: none;
+}
+.card-highlight {
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    border-radius: 0.25rem;
+}
+
+.image-highlight {
+	border: calc(.5vw + .5vh) solid;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+.image-highlight:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+
+.card-description {
+    color:rgb(63, 63, 63);
+}
+footer {
+    margin-top:0;
+}
+.switch-after {
+    display:none;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+
+@media only screen and (max-width: 568px) {
+    .switch-after {
+        display:block;
+    }
+    .switch-before {
+        display:none;
+    }
+    h1 {
+        padding-top: calc(4vw + 4vh);
+    }
+}
